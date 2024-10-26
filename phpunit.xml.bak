@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php"
+         colors="true"
+         verbose="true">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory>./tests</directory> <!-- Path to your test directory -->
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="DB_ENV" value="testing"/>
+        <!-- Add any other environment variables as needed -->
+    </php>
+</phpunit>

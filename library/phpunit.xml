@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         stopOnFailure="false">
+
+    <!-- Define the test suite -->
+    <testsuites>
+        <testsuite name="Library Management System Test Suite">
+            <directory>./tests</directory> <!-- This is where your test files are located -->
+        </testsuite>
+    </testsuites>
+
+    <!-- Code coverage configuration -->
+    <coverage processUncoveredFiles="true">
+        <include>
+            <!-- Include your application code for coverage analysis -->
+            <directory>./library</directory>
+        </include>
+        <report>
+            <html outputDirectory="./coverage-report" /> <!-- HTML report generated here -->
+            <text outputFile="./coverage-summary.txt" />
+        </report>
+    </coverage>
+
+    <!-- Optional: Add logging -->
+    <logging>
+        <log type="coverage-html" target="./coverage-report" />
+        <log type="testdox-html" target="./testdox-report.html" />
+    </logging>
+
+    <!-- PHP settings for tests -->
+    <php>
+        <ini name="error_reporting" value="-1"/>
+        <ini name="display_errors" value="1"/>
+    </php>
+</phpunit>
